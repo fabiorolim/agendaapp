@@ -1,0 +1,7 @@
+{
+  "name": "AgendaApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

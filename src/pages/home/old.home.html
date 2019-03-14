@@ -1,15 +1,15 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      CLIMA TEMPO IFPI - OEIRAS
+      Agenda
     </ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
   <ion-list>
-    <ion-item *ngFor="let dado of tempo">
-      <h2>{{ dado.id }} - {{ dado.data_read }}</h2>
-      <p>{{ dado.temperatura_int }}</p>
+    <ion-item *ngFor="let contato of contatos">
+      <h2>{{ contato.id }} - {{ contato.nome }}</h2>
+      <p>Telefone: {{ contato.telefone }}</p>
     </ion-item>
   </ion-list>
 </ion-content>

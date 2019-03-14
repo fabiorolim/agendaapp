@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, List } from 'ionic-angular';
 import { Contato } from '../../models/Contato';
-import { HttpClient } from '@angular/common/http'
-import { Carro } from '../../models/Carro';
+import { HttpClient } from '@angular/common/http';
+import { Tempo } from '../../models/Tempo';
 
 @Component({
   selector: 'page-home',
@@ -10,17 +10,18 @@ import { Carro } from '../../models/Carro';
 })
 export class HomePage {
 
-  public contatos: Contato[];
-
+  // public contatos: Contato[];
+  public tempo: Tempo[]; 
+  
   constructor(public navCtrl: NavController, private _http: HttpClient) {
     
-    this._http.get<Contato[]>('http://localhost:5000/api')
+    this._http.get<Tempo[]>('http://tempo-oeiras.herokuapp.com/api/')
         .subscribe(
-          (contatos) => {
-            console.log(contatos);
-            this.contatos = contatos
+          (tempo) => {
+            console.log(tempo);
+            this.tempo = tempo
           }
         );
-        console.log(this.contatos);
+        console.log(this.tempo);
   }
 }
